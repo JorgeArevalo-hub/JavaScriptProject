@@ -4,26 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+      <h1 class="mt-5">Sorry, I was late because...</h1>
+      <p id="excuse" onload="">My cousin step on my food when I was at work</p>
     </div>
   </body>
+  <script>
+//
+  function randomExcuse() {
+  let excuse = "";
+  let numRandom = parseInt(Math.random()*4);
+  let who = ['My neighboor ', 'My cousin ', 'My teammate ', 'A random dude '];
+  let selectedWho = who[numRandom];
+  numRandom = parseInt(Math.random()*4);
+  let action = ['destroyed ', 'took ', 'step on ', 'pissed on '];
+  let selectedAction = action[numRandom];
+  numRandom = parseInt(Math.random()*4);
+  let what = ['my food ', 'my jacket ', 'my car ', 'my shampoo '];
+  let selectedWhat = what[numRandom];
+  numRandom = parseInt(Math.random()*5);
+  let when = ['when I was at work', 'while I was in the bathroom', 'during the marriage ceremony', 'when I was donating money to some ONGs', 'while I was cooking my lunch'];
+  let selectedWhen = when[numRandom];
+  excuse = selectedWho + selectedAction + selectedWhat + selectedWhen;
+  return excuse;
+  };
+  let index = 0;
+setInterval(function() {
+      var swapPline = document.getElementById("excuse").innerText=randomExcuse();
+    index++;
+}, 2000);
+
+  </script>
 </html>

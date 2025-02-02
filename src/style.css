@@ -1,1 +1,9 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+.mt-5{
+  text-align: center;
+  font-size: 200px;
+}
+#excuse{
+  text-align: center;
+  font-size: 100px;
+}
